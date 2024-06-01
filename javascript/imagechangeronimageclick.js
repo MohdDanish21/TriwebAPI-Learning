@@ -1,3 +1,6 @@
+// image chnager on image click
+
+
 let myImage = document.querySelector('img');
 
 myImage.onclick = function(){
