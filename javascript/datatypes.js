@@ -1,0 +1,10 @@
+let nullVariable =null;
+let undefinedVariable;
+let numVar=12;
+let str ="hi how are you";
+let obj={};
+console.log("null",nullVariable);
+console.log("undefinedVariable",undefinedVariable);
+console.log("numVar",numVar);
+console.log("str",str);
+console.log("obj",obj);
