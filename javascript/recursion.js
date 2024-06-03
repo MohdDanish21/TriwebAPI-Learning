@@ -1,7 +1,5 @@
 //When a function calling it self is called Recursion
 
-
-
 function printNumSeriesRecursion(num){
     if(num==0){
         return 0;
@@ -11,6 +9,8 @@ function printNumSeriesRecursion(num){
     printNumSeriesRecursion(num);
 }
 printNumSeriesRecursion(5);
+
+
 
 
 console.log("........................")
