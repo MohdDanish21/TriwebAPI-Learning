@@ -14,3 +14,8 @@ if(newSet.has(64)){
     console.log("Has method is working")
 }
 console.log(newSet);
+
+
+for (const element of newSet) {
+    console.log("element:",element);
+}
