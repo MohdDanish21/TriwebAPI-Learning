@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Registration Form</title>
+</head>
+<body>
+   
+
+<div>
+  <form action="" onsubmit="return validateFrom()">
+    <label for="fname">First Name:</label><br>
+    <input type="text" id="fname" name="fname" placeholder="Your name.."><br>
+    <p id="nameError" class="error"></p>
+
+    <label for="lname">Last Name:</label><br>
+    <input type="text" id="lname" name="lname" placeholder="Your last name.."><br>
+    <p id="lastnameError" class="error"></p>
+
+    <label for="Email">Email:</label><br>
+    <input type="text" id="email" name="email" placeholder="Your email id.."><br>
+    <p id="emailError" class="error"></p>
+    <label for="contact number">Contact Number:</label><br>
+    <input type ="text" id="phone" name="phone" placeholder="123-45-625.."><br>
+    <p id="phoneError" class="error"></p>
+    
+    <label for="Dob">Date of Birth:</label><br>
+	<input type="date" id="Dob" name="Dob"><br>
+    
+    <label for="Age">Age:</label><br>
+	<input type="Age" id="Age" name="Age" placeholder="21.."><br><br>
+    <p id="ageError" class="error"></p>
+    
+    <legend>Choose your gender:</legend><br>
+        <label for="male">Male</label>
+        <input type="Radio" name="gender" id="male" value="male">
+        <label for="female">Female</label>
+        <input type="Radio" name="gender" id="female" value="female"><br><br>
+        
+    <label for="Myfile"> Select File:</label><br>
+	<input type="File" id="myfile" name="myfile" placeholder="21.."><br><br>
+  
+    <input type="submit" value="Registration">
+  </form>
+</div>
+<script src="form.js"></script>
+</body>
+</html>
