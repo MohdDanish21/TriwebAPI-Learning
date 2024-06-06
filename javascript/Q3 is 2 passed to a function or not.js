@@ -8,4 +8,4 @@ function isTwoPassed(){
         console.log("no 2 is not passed to this function");
     }
 }
-isTwoPassed(2);
+isTwoPassed(3);
