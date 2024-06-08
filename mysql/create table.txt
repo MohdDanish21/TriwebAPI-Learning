@@ -1,0 +1,15 @@
+//Create Table query
+CREATE TABLE `triwebapi learning`.`users` (`id` INT(11) NOT NULL , `name` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `password` VARCHAR(255) NOT NULL , `remark` VARCHAR(255), PRIMARY KEY (`id`)) ;
+
+==>Insert Query
+INSERT INTO `users`( `name`, `email`, `password`, `remark`) VALUES ('ajay','ajay@gmail.com','1234','ok');
+
+==>Select
+SELECT * FROM `users`;
+
+==>Update
+UPDATE `users SET `password`='abcd' WHERE `email`='ajay@gmail.com';
+
+==>Delete
+DELETE FROM `users` WHERE email ='ajay@gmail.com'
+
