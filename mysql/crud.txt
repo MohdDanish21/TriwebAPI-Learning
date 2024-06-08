@@ -1,0 +1,28 @@
+CRUD
+
+C- CREATE
+INSERT INTO teacher(mobile,Teacher_name) VALUES('1111','t1');
+OUTPUT---> 1 row inserted.
+Inserted row id: 1
+
+R-Retrieve--->SELECT * FROM `teacher` WHERE 1;
+
+U-Update-->UPDATE teacher SET mobile='2222'
+
+D-delete-->DELETE FROM teacher;
+
+
+INSERT
+INSERT INTO classes(class_name,teacher_id)VALUES('class one',1)
+INSERT INTO classes(class_name,teacher_id)VALUES(2,'class two',2)
+INSERT INTO students(id,student_name,class_id,mobile)VALUES(1,'Azhar',2,'1122');
+INSERT INTO students(id,student_name,class_id,mobile)VALUES(2,'Aroosh',1,'1133');
+
+Update-->
+update classes set class_name="class four" where id =4;
+
+
+
+Delete-> it only delete the records in TABLE.It can not the auto AUTO_INCREMENT
+
+Truncate-Truncate TABLE classes: It reset the TABLE
