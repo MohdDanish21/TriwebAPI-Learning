@@ -1,0 +1,88 @@
+ myFirstDatabase1> show dbs
+
+ db.myfirstcollection.insert({name:"Aditya",mobile:1234})
+
+  DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6665e7b755b60ee081e90baf") }
+}
+
+insert-depricated
+insert()
+insertMany()
+
+Example 1....INSERTOne and 
+
+db.myfirstcollection.insertOne({name:"Sudheer",mobile:2222})
+
+example 2....insertMany
+ db. db.myfirstcollection.insertMany([{name:"Firdous",email:"abcd@gmail.com" },{name:"Azhar",mobile:3333,location:"India"}])
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6665eb0f55b60ee081e90bb1"),
+    '1': ObjectId("6665eb0f55b60ee081e90bb2")
+  }
+} // ObjectId is unique in no sql database it helps to find id uniquely
+
+
+// how find Collection.............................
+db.myfirstcollection.find()
+[
+  {
+    _id: ObjectId("6665e7b755b60ee081e90baf"),
+    name: 'Aditya',
+    mobile: 1234
+  },
+  {
+    _id: ObjectId("6665edfb55b60ee081e90bb3"),
+    name: 'Firdous',
+    email: 'abcd@gmail.com'
+  },
+  {
+    _id: ObjectId("6665edfb55b60ee081e90bb4"),
+    name: 'Azhar',
+    mobile: 3333,
+    location: 'India'
+  }
+]
+
+// To find a particular name
+
+db.myfirstcollection.find({name:"Azhar"})
+[
+  {
+    _id: ObjectId("6665edfb55b60ee081e90bb4"),
+    name: 'Azhar',
+    mobile: 3333,
+    location: 'India'
+  }
+]
+
+
+//update
+Atlas atlas-6586hu-shard-0 [primary] myFirstDatabase1> db.myfirstcollection.updateOne({name:"Azhar"},{$set:{mobile:4444}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+Atlas atlas-6586hu-shard-0 [primary] myFirstDatabase1> db.myfirstcollection.find({name:"Azhar"})
+[
+  {
+    _id: ObjectId("6665edfb55b60ee081e90bb4"),
+    name: 'Azhar',
+    mobile: 4444,
+    location: 'India'
+  }
+]
+
+// delete
+
+Atlas atlas-6586hu-shard-0 [primary] myFirstDatabase1> db.myfirstcollection.deleteOne({name:"Azhar"})
+{ acknowledged: true, deletedCount: 1 }
