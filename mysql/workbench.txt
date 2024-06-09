@@ -75,6 +75,67 @@ order by class_id
 select* from students  where class_id<>6 order by class_id asc
 select* from students  where class_id<>6 order by class_id desc
 
+// mysql limit clause
+select* from  students where class_id =5 limit 2
+
+// max() or min()
+select max(salary) from  teachers
+select min(salary) from  teachers
+
+Mysql COUNT(), AVG(), AND SUM() FUNCTIONS
+
+select count(id) as NumerOfTeachers from  teachers
+select avg(salary) as Average_salary from  teachers
+select sum(salary) as Total_salary from  teachers
+
+//MYSQL LIKE operators
+select* FROM STUDENTS WHERE STUDENT_name like'A%'
+select* FROM STUDENTS WHERE STUDENT_name like'A%l'  // here start from A and End on L
+
+// mysql IN operators
+select* FROM STUDENTS WHERE class_id in(1,5,6)
+select max(salary) from teachers where salary not in(10000)
+
+//second highest salary
+select max(salary) from teachers where salary not in(select max(salary)from teachers)
+
+
+//third highest salary
+select max(salary) from teachers where salary not in(select max(salary)from teachers) and salary not in(select max(salary) from teachers where salary not in(select max(salary)from teachers))
+
+// between
+Select*from teachers  where salary between 5000 and 11000
+
+// mysql join
+Select*from classes cl left join teachers tr on cl.teacher_id= tr_id
+Select cl.class_name,tr.teacher_name as class_teacher 
+from classes cl 
+left join teachers tr on cl.teacher_id= tr_id
+
+// mysql union
+select student_name from students
+union
+select teacher_name from teachers
+
+
+// mysql group statement
+select class_id,count(*) as Number_Of_students from students
+group by class_id
+
+// order by with group by
+
+select class_id,count(*) as Number_Of_students from students
+group by class_id
+order by Number_Of_students desc
+
+
+// mysql having clause when condition is count,max, avg, min
+
+select class_id,count(*) as Number_Of_students from students
+group by class_id
+having Number_Of_students >1
+
+
 
 
 // mysql null values....> it is not possible to test for null values with comparison operators such as =,<,>or<>; 
