@@ -1,0 +1,169 @@
+//take user input and store information in database with CRUD functionalities.
+
+
+db.users.insert({
+    name:"Raju",
+    age:25,
+    address:"Delhi India"
+
+})
+
+ db.users.find()
+[
+  {
+    _id: ObjectId("6666d66fd8c0d8c6d622058f"),
+    name: 'Raju',
+    age: 25,
+    address: 'Delhi India'
+  }
+]
+
+db.users.insertOne({
+    name:"Maaz",
+    age:4,
+    address:"u.p"
+})
+
+[
+  {
+    _id: ObjectId("6666d66fd8c0d8c6d622058f"),
+    name: 'Raju',
+    age: 25,
+    address: 'Delhi India'
+  },
+  {
+    _id: ObjectId("6666d6d4d8c0d8c6d6220590"),
+    name: 'Maaz',
+    age: 4,
+    address: 'u.p'
+  }
+]
+
+// find particular one id
+[
+  {
+    _id: ObjectId("6666d6d4d8c0d8c6d6220590"),
+    name: 'Maaz',
+    age: 4,
+    address: 'u.p'
+  }
+]
+
+
+// insertMany................
+db.users.insertMany([{
+
+    name:"Maaz",
+    age:4,
+    address:"u.p"
+},{
+    name:"Hasan",
+    age:20,
+    address:"MH"
+},{
+    name:"Rahul",
+    age:30,
+    address:"PB"
+}])
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6666d811d8c0d8c6d6220591"),
+    '1': ObjectId("6666d811d8c0d8c6d6220592"),
+    '2': ObjectId("6666d811d8c0d8c6d6220593")
+  }
+}
+
+// find all
+
+[
+  {
+    _id: ObjectId("6666d66fd8c0d8c6d622058f"),
+    name: 'Raju',
+    age: 25,
+    address: 'Delhi India'
+  },
+  {
+    _id: ObjectId("6666d6d4d8c0d8c6d6220590"),
+    name: 'Maaz',
+    age: 4,
+    address: 'u.p'
+  },
+  {
+    _id: ObjectId("6666d811d8c0d8c6d6220591"),
+    name: 'Maaz',
+    age: 4,
+    address: 'u.p'
+  },
+  {
+    _id: ObjectId("6666d811d8c0d8c6d6220592"),
+    name: 'Hasan',
+    age: 20,
+    address: 'MH'
+  },
+  {
+    _id: ObjectId("6666d811d8c0d8c6d6220593"),
+    name: 'Rahul',
+    age: 30,
+    address: 'PB'
+  }
+]
+
+// updateOne
+db.users.updateOne({name:"Hasan"},{$set:{age:25}})
+
+Atlas atlas-6586hu-shard-0 [primary] myFirstDatabase1> db.users.updateOne({name:"Hasan"},{$set:{age:25}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-6586hu-shard-0 [primary] myFirstDatabase1> db.users.find( {_id: ObjectId("6666d811d8c0d8c6d6220592")})
+[
+  {
+    _id: ObjectId("6666d811d8c0d8c6d6220592"),
+    name: 'Hasan',
+    age: 25,
+    address: 'MH'
+  }
+]
+Atlas atlas-65
+
+
+// delete
+
+ db.users.deleteOne({_id: ObjectId("6666d6d4d8c0d8c6d6220590")})
+{ acknowledged: true, deletedCount: 1 }
+
+db.users.find()
+[
+  {
+    _id: ObjectId("6666d66fd8c0d8c6d622058f"),
+    name: 'Raju',
+    age: 25,
+    address: 'Delhi India'
+  },
+  {
+    _id: ObjectId("6666d811d8c0d8c6d6220591"),
+    name: 'Maaz',
+    age: 4,
+    address: 'u.p'
+  },
+  {
+    _id: ObjectId("6666d811d8c0d8c6d6220593"),
+    name: 'Rahul',
+    age: 30,
+    address: 'PB'
+  }
+]
+
+ show dbs
+myFirstDatabase    40.00 KiB
+myFirstDatabase1  400.00 KiB
+mydatabase         80.00 KiB
+mydb                8.00 KiB
+admin             308.00 KiB
+local              35.17 GiB
