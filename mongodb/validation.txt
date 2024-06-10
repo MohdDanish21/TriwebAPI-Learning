@@ -1,0 +1,151 @@
+db.createCollection('products',{validator:{
+    $jsonSchema:{
+        bsonType:'object',
+        required:['title','pname','owner','comments'],
+        properties:{
+            title:{
+                bsonType:'string',
+                description:'Title must be string'
+
+            },
+            pname:{
+                bsonType:'string',
+                description:'pname must be string'
+
+            },
+            owner:{
+                bsonType:'objectId',
+                description:'id of customer'
+
+            },
+            comments:{
+                bsonType:'string',
+                description:'comments must be string'
+
+            }
+        }
+        
+    }
+        
+}
+        
+})
+
+
+//db.customer.find()
+// db.products.insertOne({title:"my products",pname:"products001",owner:ObjectId("66669d03d8c0d8c6d622057d"),comments:"Hi Hello"})
+db.products.insertMany([{title:"my products2",pname:"products002",owner:ObjectId("66669d03d8c0d8c6d622057d"),comments:"Hi Hello"},{title:"my products3",pname:"products003",owner:ObjectId("66669d03d8c0d8c6d622057d"),comments:"Hi Hello"},{title:"my products4",pname:"products004",owner:ObjectId("66669d03d8c0d8c6d622057d"),comments:"Hi Hello"}])
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6666c33fd8c0d8c6d6220583"),
+    '1': ObjectId("6666c33fd8c0d8c6d6220584"),
+    '2': ObjectId("6666c33fd8c0d8c6d6220585")
+  }
+}
+
+//find
+
+ db.products.find()
+[
+  {
+    _id: ObjectId("6666bffcd8c0d8c6d6220582"),
+    title: 'my products',
+    pname: 'products001',
+    owner: ObjectId("66669d03d8c0d8c6d622057d"),
+    comments: 'Hi Hello'
+  },
+  {
+    _id: ObjectId("6666c33fd8c0d8c6d6220583"),
+    title: 'my products2',
+    pname: 'products002',
+    owner: ObjectId("66669d03d8c0d8c6d622057d"),
+    comments: 'Hi Hello'
+  },
+  {
+    _id: ObjectId("6666c33fd8c0d8c6d6220584"),
+    title: 'my products3',
+    pname: 'products003',
+    owner: ObjectId("66669d03d8c0d8c6d622057d"),
+    comments: 'Hi Hello'
+  },
+  {
+    _id: ObjectId("6666c33fd8c0d8c6d6220585"),
+    title: 'my products4',
+    pname: 'products004',
+    owner: ObjectId("66669d03d8c0d8c6d622057d"),
+    comments: 'Hi Hello'
+  }
+]
+
+
+
+
+//Ordered insertion applied when  if find any error in database then it will break  (it will run before error break after error it will not )
+
+// here we will use ordered.false
+
+db.products.insertMany([{title:"my products5",pname:"products005",owner:ObjectId("66669d03d8c0d8c6d622057d"),comments:"Hi Hello"},
+{pname:"products006",owner:ObjectId("66669d03d8c0d8c6d622057d"),comments:"Hi Hello"},
+{title:"my products7",pname:"products007",owner:ObjectId("66669d03d8c0d8c6d622057d"),comments:"Hi Hello"}],{Ordered:false})
+
+
+[
+  {
+    _id: ObjectId("6666bffcd8c0d8c6d6220582"),
+    title: 'my products',
+    pname: 'products001',
+    owner: ObjectId("66669d03d8c0d8c6d622057d"),
+    comments: 'Hi Hello'
+  },
+  {
+    _id: ObjectId("6666c33fd8c0d8c6d6220583"),
+    title: 'my products2',
+    pname: 'products002',
+    owner: ObjectId("66669d03d8c0d8c6d622057d"),
+    comments: 'Hi Hello'
+  },
+  {
+    _id: ObjectId("6666c33fd8c0d8c6d6220584"),
+    title: 'my products3',
+    pname: 'products003',
+    owner: ObjectId("66669d03d8c0d8c6d622057d"),
+    comments: 'Hi Hello'
+  },
+  {
+    _id: ObjectId("6666c33fd8c0d8c6d6220585"),
+    title: 'my products4',
+    pname: 'products004',
+    owner: ObjectId("66669d03d8c0d8c6d622057d"),
+    comments: 'Hi Hello'
+  },
+  {
+    _id: ObjectId("6666c5d1d8c0d8c6d6220586"),
+    title: 'my products5',
+    pname: 'products005',
+    owner: ObjectId("66669d03d8c0d8c6d622057d"),
+    comments: 'Hi Hello'
+  },
+  {
+    _id: ObjectId("6666c637d8c0d8c6d6220589"),
+    title: 'my products5',
+    pname: 'products005',
+    owner: ObjectId("66669d03d8c0d8c6d622057d"),
+    comments: 'Hi Hello'
+  },
+  {
+    _id: ObjectId("6666c6fad8c0d8c6d622058c"),
+    title: 'my products5',
+    pname: 'products005',
+    owner: ObjectId("66669d03d8c0d8c6d622057d"),
+    comments: 'Hi Hello'
+  },
+  {
+    _id: ObjectId("6666c6fad8c0d8c6d622058e"),
+    title: 'my products7',
+    pname: 'products007',
+    owner: ObjectId("66669d03d8c0d8c6d622057d"),
+    comments: 'Hi Hello'
+  }
+]
