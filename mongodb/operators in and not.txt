@@ -1,0 +1,55 @@
+// in and not in like 
+//$in and $n for not in
+ db.books.find()
+[
+  {
+    _id: ObjectId("6666a158d8c0d8c6d622057e"),
+    bname: 'abc',
+    price: 400
+  },
+  {
+    _id: ObjectId("6666a158d8c0d8c6d622057f"),
+    bname: 'you can win',
+    price: 500
+  },
+  {
+    _id: ObjectId("6666a158d8c0d8c6d6220580"),
+    bname: 'lectuc',
+    price: 600
+  }
+]
+
+Atlas atlas-6586hu-shard-0 [primary] myFirstDatabase1> db.books.find({price:600})
+[
+  {
+    _id: ObjectId("6666a158d8c0d8c6d6220580"),
+    bname: 'lectuc',
+    price: 600
+  }
+]
+
+Atlas atlas-6586hu-shard-0 [primary] myFirstDatabase1> db.books.find({price:{$in:[400,600]}})
+[
+  {
+    _id: ObjectId("6666a158d8c0d8c6d622057e"),
+    bname: 'abc',
+    price: 400
+  },
+  {
+    _id: ObjectId("6666a158d8c0d8c6d6220580"),
+    bname: 'lectuc',
+    price: 600
+  }
+]
+
+
+// not in
+
+Atlas atlas-6586hu-shard-0 [primary] myFirstDatabase1> db.books.find({price:{$nin:[400,600]}})
+[
+  {
+    _id: ObjectId("6666a158d8c0d8c6d622057f"),
+    bname: 'you can win',
+    price: 500
+  }
+]
