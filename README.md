@@ -1,2 +1,1 @@
-# TriwebAPI-Learning 
-MERN Internship 
+# TRIWEBAPI-LEARNING 
