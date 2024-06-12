@@ -15,7 +15,7 @@
 1.[.CSS](./css/README.md)
 2.[.Form](./css/form/README.md)
 3.[.Time-Table](./css/Time-table/README.md)
-4.[.Es6](./Es6/README.md)
+4.[.ES6](./Es6/README.md)
 5.[.ES2020](./ES2020/README.md)
 6.[.HTML-Form](./html/form/README.md)
 7.[.JAVASCRIPT](./javascript/README.MD)
