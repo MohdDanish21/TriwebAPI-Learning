@@ -1,0 +1,26 @@
+=>create table
+CREATE TABLE `triwebapi learning`.`users` (`id` INT(11) NOT NULL , `name` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `password` VARCHAR(255) NOT NULL , `remark` VARCHAR(255), PRIMARY KEY (`id`)) ;
+
+
+
+=>INSERT
+INSERT INTO `users`('name',`email`,`password`,`remark`) values('ajay','ajay@gmail.com','1234','ok');
+
+
+=>select
+SELECT*FROM `users`;
+SELECT*FROM `users`  WHERE email='ajay@gmail.com';
+
+
+=>update
+UPDATE `USERS` SET `password`=`abcd` WHERE `email`=`ajay@gmail.com`;
+
+=>delete
+
+DELETE FROM ``USERS where email='ajay@gmail.com'
+
+
+
+//for sequilize
+
+ALTER TABLE `users` ADD `createdAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `remark`, ADD `updatedAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `createdAt`;
