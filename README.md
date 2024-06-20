@@ -24,7 +24,7 @@
 
 6.[.HTML-Form](./html/form/README.md)
 
-7.[.JAVASCRIPT](./javascript/README.MD)
+7.[.JAVASCRIPT](./javascript/README.md)
 
 8.[.MONGODB](./mongodb/README.md)
 
@@ -41,3 +41,11 @@
 14.[.HTMLCSSJSPROJECTS](./projects/HTML-CSS-JS%20project/README.md)
 
 15.[.NODEJS](./Nodejs/README.md)
+
+16.[.PROJECTS](./Nodejs/Projects/Bnodejs/README.md)
+
+17.[.WORKSHOP1](./Nodejs/workshop1/README.md)
+
+18.[WORKSHOP2](./Nodejs/workshop2/README.md)
+
+19.[WORKSHOP3](./Nodejs/workshop3/README.md)
