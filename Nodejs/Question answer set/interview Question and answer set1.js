@@ -63,3 +63,6 @@
 // Each message has an associated function that gets called to handle the message.
 
 // wait synchronously for a message to arrive.
+
+//9. What is destructuring?
+//we can extract data from arrays and objects and assign them to variables 
