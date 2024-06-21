@@ -1,0 +1,59 @@
+1.what is bind()?
+
+The simplest use of bind is to make a function that, no matter how it is called, is called with particular 'this'
+
+In call(), and apply() we bind 'this' and executes function at a time, while
+In bind() we bind 'this' now and execute it later
+
+2.what is yield?
+The yield keyword use to pause and resume the generator functions. (function* this is generator function)
+
+3. what is generator and write work of yield and next function?
+Generator function in javascript is used to generate values. It returns a generator object.
+ These functions are written with function* syntax. 
+
+The yield keyword is used within the generator is used to pause and resume the execution of code
+
+The next() method of Generator instances returns an object with two properties done and value .
+
+4. what is Array.map?
+.array.length print length and whenever you can increase value of an array it will set automatically.
+
+.index is sequential and Array  is sequential data types 
+
+// Map creates a new array with the results of calling a function for every array element.
+//The map methods call the provided function once for each element in array.
+// Map function does not execute the function for array element without values.
+
+5. what is map and weak map?
+
+-A weakMap accept only objects as keys  
+-Map accept primitive data types as keys like string and numbers.
+-There is no size property exist in weak map
+
+
+6. Array and Map Difference ?
+An array is the collection of items stored at contiguous memory locations.
+The idea is to store multiple items of the same types together.
+array has automatically index
+example----> let arr=[1,2,3,4,5,6]
+
+A map is An associative container that stores element in the maped fashion or manner.
+Used to store records of user
+In map we create index and key.  
+let map={
+    uname:"Azhar",
+    mobile:"987698"
+}
+
+
+7. what is callback,callback hell and how to avoid callback hell?
+
+callback function-> call in a asynchronous way,  asynchronous equivalent of a function
+-helps in non blocking code  
+-helps in performance of single thread nodejs application.
+
+callback hell->Callback hell is a phenomenon where a Callback is called inside another Callback.
+ It is the nesting of multiple Callbacks inside a function.
+
+ how to avoid callback hell--->by  1.aync await and promise 2. break in a modules
