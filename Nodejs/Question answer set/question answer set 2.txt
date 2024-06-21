@@ -17,3 +17,35 @@ inheritance==> with call you can inherit a method.
 The call() method is a predefined JavaScript method. 
 It can be used to invoke (call) a method with an owner object as an argument (parameter). 
 With call() , an object can use a method belonging to another object.
+
+4. what are Synchronous vs ASynchronous?
+Synchronous JavaScript is the programming approach where tasks of a program are executed sequentially one at a time.
+
+Asynchronous JavaScript is the programming method where operations are run independently allowing 
+the program to continue running while waiting for certain tasks to complete.
+
+5. Describe SetImmediate?
+setImmediate() is a function in Node. 
+js that schedules a callback to be executed immediately after the current Poll phase of the Event Loop completes. 
+
+6. Describe SetTimeout?
+A setTimeout() callback with a 0ms delay is very similar to setImmediate(). 
+The execution order will depend on various factors, 
+but they will be both run in the next iteration of the event loop.
+
+7. Describe Process.nextTick?
+process. nextTick is used to ensure an asynchronous operation is completed before other asynchronous operations begin. 
+For example, 
+it can guarantee that an event is emitted or a callback is executed after an operation is completed, 
+but before other events or callbacks are processed
+
+8. Describe apply()? and what is the difference apply and call?
+difference 
+
+In call() we pass arguments
+In apply() we pass array
+
+
+The apply() method is used to write methods, which can be used on different objects. 
+It is different from the function call() because it takes arguments as an array.
+ Syntax: apply() Return Value: It returns the method values of a given function
