@@ -1,0 +1,19 @@
+ 1 What is Arrow Function?
+
+.Arrow function {()=>} is concise way of writing JavaScript functions in shorter way. 
+.Arrow functions were introduced in the ES6 version. 
+.They make our code more structured and readable. 
+.Arrow functions are anonymous functions i.e. functions without a name but they are often assigned to any variable.
+
+2 what is This in Arrow function?
+
+. With arrow functions the this keyword always represents the object that defined the arrow function.
+
+3. what is call ()?
+
+. call() provides a new value of this to the function/methods.
+inheritance==> with call you can inherit a method.
+
+The call() method is a predefined JavaScript method. 
+It can be used to invoke (call) a method with an owner object as an argument (parameter). 
+With call() , an object can use a method belonging to another object.
