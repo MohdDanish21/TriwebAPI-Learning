@@ -26,11 +26,15 @@ it creates shallow copy of one level
 
 
 
-
-
-
-
-
 2. what is deep copy?
 while deep copying creates a new object with new memory locations for all of its properties 
 and nested objects or arrays.
+
+.A Deep copy construct a new compound object and then, recursively,inserts copies into t of the objects
+found in the original.
+.A deep copy can be made using lodash, R.clone () or you can write your own program.
+
+(a).Lodash
+The library Lodash is most common way javascript developer a deep copy
+
+while using lodash install lodash(deep-copy vs shallow-copy\deep-copy> npm install lodash).
