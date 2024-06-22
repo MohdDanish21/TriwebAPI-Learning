@@ -19,6 +19,9 @@ it can be used with the object or array.
 for any specifically, using the built-in slice method works the same as the spread operator.
 it creates shallow copy of one level
 
+(D). Array.from()
+ It will make a shallow copy of a javascript Array.
+
 
 
 
