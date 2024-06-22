@@ -3,6 +3,31 @@ terminal yarn add express
 1. what shallow copy?
 Shallow copying creates a new object with references to the same memory locations as the original object.
 
+A shallow copy refers to a fact that only one level is copied.
+it will work fine for an array or object containing primitive values.
+
+(a).By spread operator(...)
+this is a convenient way to make a shallow copy of an array or an object
+when there is no nesting it works great.
+
+(B).By Object.assign()
+The same type of shallow copy would be created using object.assign().
+it can be used with the object or array.
+
+(C). .slice()
+
+for any specifically, using the built-in slice method works the same as the spread operator.
+it creates shallow copy of one level
+
+
+
+
+
+
+
+
+
+
 2. what is deep copy?
 while deep copying creates a new object with new memory locations for all of its properties 
 and nested objects or arrays.
