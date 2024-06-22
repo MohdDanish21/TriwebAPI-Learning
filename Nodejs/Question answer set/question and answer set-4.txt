@@ -36,3 +36,23 @@ client.get("name",(error,value)=>{
 
 Event emitters are objects in Node. js, 
 that trigger an event by sending a message to signal that an action was completed.
+
+5. what is libuv?
+Unicorn Velociraptor.
+LIBUV is a multi-platform C library that provides support for asynchronous O/O based on event loops.
+
+6. what is closure?
+A closure is the combination of a function bundled together 
+(enclosed) with references to its surrounding state (the lexical environment).
+
+7. What is Router?
+Routing allows targeting different routes or different URLs on our page.
+create a folder of Router
+then goto cmd or terminal install  (npm install node express)
+nd to ignore not to commit node_module
+create a file gitignore in router folder this file will not commit because it is very heavy file. 
+
+8. what is promise?
+A promise is essentially an improvement of callbacks that manage all asynchronous data activities.
+A JavaScript promise represents an activity that will either be completed or declined.
+If the promise is fulfilled, it is resolved; otherwise, it is rejected.
