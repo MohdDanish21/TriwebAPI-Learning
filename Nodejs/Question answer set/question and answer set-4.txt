@@ -1,0 +1,38 @@
+1. New.target pseudo property to detect wether a function or constructor was called using the new operator or not.
+In simple terms, a target in JavaScript is an object or element that triggers an event.
+
+2. How to create http server?
+-cmd npm init
+-created package.json
+-created app.js file
+then work on app .js
+
+const http=require(http);
+const sever= http.createSever((req,res)=>{
+    res.writeHead(200,{'contentType':'text/plain'});
+    res.end("server is running");
+});
+server.listen(3000);
+
+3. Testing redis on windows
+
+cmd npn init then npm install --save redis
+work on app.js
+const redis=require('redis);
+const redisUrl='redis://127.0.0.1:6379';
+const client=redis.createClient(redisUrl);
+
+client.set("name","redis");
+console.log("data is set now");
+
+client.get("name",(error,value)=>{
+    if(error){
+        console.log(error);
+    }
+    console.log(value);
+})
+
+4. what is event emitter?
+
+Event emitters are objects in Node. js, 
+that trigger an event by sending a message to signal that an action was completed.
