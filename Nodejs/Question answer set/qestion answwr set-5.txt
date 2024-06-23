@@ -41,3 +41,25 @@ while using lodash install lodash(deep-copy vs shallow-copy\deep-copy> npm insta
 
 (C).Ramda
 The functional programming library Ramda includes R.clone(),which makes deep copy of an Object or an array,
+
+
+
+
+3. what is spaghetti code?
+poorly structured and disorganized code.
+
+it makes the code difficult to read, maintain, and understand
+
+code lacks a clear flow of control.
+
+it often involves excessive jumps and interconnection between parts of the code.
+
+making it hard to follow.
+
+Excessive Nesting..
+It includes deep nesting of loops, conditions, or functions calls.
+
+spaghetti code is characterized by a lack of structure,deep nesting reliance on global variable, 
+absence of modularization, and poor documentation. 
+
+
