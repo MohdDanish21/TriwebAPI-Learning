@@ -38,3 +38,6 @@ found in the original.
 The library Lodash is most common way javascript developer a deep copy
 
 while using lodash install lodash(deep-copy vs shallow-copy\deep-copy> npm install lodash).
+
+(C).Ramda
+The functional programming library Ramda includes R.clone(),which makes deep copy of an Object or an array,
