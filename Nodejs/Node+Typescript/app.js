@@ -12,6 +12,6 @@ app.get('/',(req,res)=>{
 app.use('/user',userRoute);
    
 
-
+// app.use(require('./routes/auth'));
 
 app.listen(process.env.PORT);
