@@ -46,6 +46,12 @@
 
 17.[.WORKSHOP1](./Nodejs/workshop1/README.md)
 
-18.[WORKSHOP2](./Nodejs/workshop2/README.md)
+18.[.WORKSHOP2](./Nodejs/workshop2/README.md)
 
-19.[WORKSHOP3](./Nodejs/workshop3/README.md)
+19.[.WORKSHOP3](./Nodejs/workshop3/README.md)
+
+20.[.REACT](./React/README.md)
+
+21.[.DUMMYPROJECT](./React/dummy/README.md)
+
+22.[.MYPROJECT](./React/my/README.md)
