@@ -1,0 +1,40 @@
+.moduleSection{
+  background-color: #fff;
+  border:1px solid #ccc;
+  border-collapse: collapse;
+  border-radius: 6px;
+  width:70%;
+}
+
+th,td{
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover{background-color: rgb(226, 43, 186);}
+
+.hoverable:hover{
+  color:rgb(15, 48, 235);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.userName{
+  padding: 5px;
+}
+
+.mobile{
+  padding: 10px;
+}
+.lblUsername{
+  margin: 5px;
+}
+
+.lblMobile{
+  margin: 5px;
+}
+
+.btn{
+  margin-left: 50px;
+}
