@@ -1,4 +1,5 @@
-const express=require('express');
+const express=require("express");
+const mongoose=require("mongoose")
 
 const app =express();
 
@@ -26,12 +27,9 @@ app.delete("/",(req,res)=>{
 
 
 
-
-
-
-app.listen(3000,(err)=>{
-    if(err){
-        console.log(err);
-    }
-    console.log("server started");
-});
+const uri=
+"mongodb+srv://danishdmseo:Danish123@myfirstproject.flxpytt.mongodb.net/workshop2023?retryWrites=true&w=majority";
+mongoose.connect(uri)
+.then((success)=> app.listen(3000))
+.catch((err)=> console.log(err.message));
+   
