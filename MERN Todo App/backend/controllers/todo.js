@@ -49,8 +49,8 @@ const deleteTodo = async(req,res)=>{
 
         const id = req.body._id;
         const todo = await Todo.findById(id);
-
-        todo.deleteOne();
+        console.log(todo._id===id);
+        await todo.deleteOne({_id:id});
         
         // console.log(result);
         res.send({status: "success",message: "Todo Delete Successfully"});
