@@ -7,6 +7,8 @@ install type definition of node.......... yarn add @types/node
 transpiler.......tsc --noEmitOnError
 run command......node .\dist\app.js 
 
+install mongoose yarn add mongoose
+
 Add Script to run yarn build and yarn start
  "scripts": {
     "build":"tsc --noEmitOnError",
@@ -22,3 +24,8 @@ mongoose odm (object document modeling)
 aggregate function ........insert, update, find etc..
 
 nodejs--mongodb : connection string
+
+IP WHITELISTING:
+
+//schema.......architecture > name , email, password
+/model........name:user:users
