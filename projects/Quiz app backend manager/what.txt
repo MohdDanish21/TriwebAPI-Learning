@@ -6,3 +6,19 @@ install type definition of express.......... yarn add @types/express
 install type definition of node.......... yarn add @types/node
 transpiler.......tsc --noEmitOnError
 run command......node .\dist\app.js 
+
+Add Script to run yarn build and yarn start
+ "scripts": {
+    "build":"tsc --noEmitOnError",
+    "start": "node./dist/app.js"
+  }
+
+yarn build and
+yarn start
+
+...............................................
+mongodb
+mongoose odm (object document modeling)
+aggregate function ........insert, update, find etc..
+
+nodejs--mongodb : connection string
