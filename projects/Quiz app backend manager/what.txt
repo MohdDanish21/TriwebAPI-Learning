@@ -1,0 +1,8 @@
+yarn ..........yarn init
+express.................. yarn add express
+typescript...........yarn add typescript
+tsconfig..........tsc --init
+install type definition of express.......... yarn add @types/express
+install type definition of node.......... yarn add @types/node
+transpiler.......tsc --noEmitOnError
+run command......node .\dist\app.js 
