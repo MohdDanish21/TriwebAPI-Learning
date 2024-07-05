@@ -29,3 +29,20 @@ IP WHITELISTING:
 
 //schema.......architecture > name , email, password
 /model........name:user:users
+
+Bson...... mongodb saved data in Bson format 
+
+projection
+
+ts node install ......yarn add ts-node (execute type scripts)
+issue: regular build on development
+
+ts node install in dev..... yarn add --dev ts-node
+dev depencies we want this ts node on development not production
+
+.....yarn ts-node
+ts-node : The term 'ts-node' is not recognized as the name of a cmdlet, function, script file, or operable program.
+solution write (yarn ts-node)
+
+yarn ts-node .\src\app.ts
+benefit: ts-node: direct execute typescript, build effort reduced.

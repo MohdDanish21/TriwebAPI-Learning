@@ -4,10 +4,26 @@ const schema =mongoose.Schema;
 
 const userSchema= new schema(
     {
-        name:String,
-        email:String,
-        password:String
+        name:{
+            type:String,
+            required:true
+        },
+       
+        email:{
+            type:String,
+            required:true,
+            unique:true,
+            index:true
+        },
+        password:{
 
+            type:String,
+            required:true
+        }
+
+    },
+    {
+        timestamps:true      // it will handle created app and updated app  
     }
 );
 

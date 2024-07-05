@@ -6,9 +6,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const schema = mongoose_1.default.Schema;
 const userSchema = new schema({
-    name: String,
-    email: String,
-    password: String
+    name: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        index: true
+    },
+    password: {
+        type: String,
+        required: true
+    }
+}, {
+    timestamps: true // it will handle created app and updated app  
 });
 const User = mongoose_1.default.model("User", userSchema);
 exports.default = User;
