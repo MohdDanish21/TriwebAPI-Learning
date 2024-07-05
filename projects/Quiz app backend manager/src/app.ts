@@ -3,11 +3,12 @@ import express from 'express';
 import mongoose from 'mongoose';
 
 
-import UserRoute from './routes/user'
+import UserRoute from './routes/user';
+import authRoute from './routes/auth';
 
 const app =express();
 
-const connectionString = "mongodb+srv://danishdmseo:Danish123@myfirstproject.flxpytt.mongodb.net/QuizApp?retryWrites=true&w=majority";
+const connectionString = process.env.CONNECTION_STRING || "";
 
 app.use(express.json());
 
@@ -22,6 +23,8 @@ app.get('/',(req,res)=>{
 //redirect /user to userRoute
 app.use('/user',UserRoute);
 
+// redirect / auth
+app.use('/auth',authRoute);
 
 // mongoose.connect(connectionString,(err)=>{
 //     console.log(err);

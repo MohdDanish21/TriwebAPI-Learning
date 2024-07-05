@@ -8,26 +8,7 @@ interface ReturnResponse{
     data:{}
 }
 
-const registerUser = async(req:Request,res:Response)=>{
 
-    let resp:ReturnResponse;
-    try {
-        const user = new User(req.body);
-        const result =await user.save();
-        if(!result){
-            resp={status:"error",message:"no result found",data:{}};
-            res.send(resp);
-        }else{
-            resp={status:"success",message:"Registration done!",data:{userId:result._id}}
-            res.send(resp);
-        }
-    } catch (error) {
-        // console.log(error);
-            resp={status:"error",message:"something went wrong",data:{}};
-            res.status(500).send(resp);
-    }
-     
-}
 
 const getUser = async (req:Request,res:Response)=>{
 
@@ -78,7 +59,7 @@ const getUser = async (req:Request,res:Response)=>{
 
 const updateUser = async (req: Request, res: Response) => {
     let resp:ReturnResponse;
-    console.log("hello");
+    console.log("hi");
     try {
         const userId = req.body._id;
 
@@ -116,4 +97,4 @@ const updateUser = async (req: Request, res: Response) => {
 };
 
 // module.exports.registerUser=registerUser;
-export {registerUser,getUser ,updateUser}
+export {getUser ,updateUser}

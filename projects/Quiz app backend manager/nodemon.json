@@ -1,0 +1,9 @@
+{
+    "env":{
+        "CONNECTION_STRING":"mongodb+srv://danishdmseo:Danish123@myfirstproject.flxpytt.mongodb.net/QuizApp?retryWrites=true&w=majority"
+    },
+    "watch":["src"],
+    "exec": "ts-node ./src/app.ts",
+    "ext": "ts,json"
+
+}

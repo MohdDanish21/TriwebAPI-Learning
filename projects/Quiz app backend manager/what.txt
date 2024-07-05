@@ -46,3 +46,37 @@ solution write (yarn ts-node)
 
 yarn ts-node .\src\app.ts
 benefit: ts-node: direct execute typescript, build effort reduced.
+
+ yarn add --dev nodemon
+ nodemon-----reduce build efforts
+ sever started automatically
+ just execute nodemon
+
+ (rs) means t restart service of nodemon
+
+ add  folder watch
+ add exec, what command execute
+ customize nodemon.json
+
+ yarn add bcryptjs 
+  yarn add @types/bcryptjs 
+
+password:Encryption
+ ec6 watch video.....object key value
+bcrypt js for encrypting password
+how to handle login
+how to verify the password for login
+how to manage password 
+
+
+
+yarn add jsonwebtoken
+install type definition .....yarn add @types/jsonwebtoken
+jwt ...... form a token for us
+generate signature to send data after encrypt 
+how to send jwt token
+
+
+break code -> authentication &authorize
+middleware...routes....middleware...controller
+middleware...... authentication:: jwt
