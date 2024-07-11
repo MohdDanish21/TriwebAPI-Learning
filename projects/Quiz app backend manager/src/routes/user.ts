@@ -2,11 +2,13 @@
 import express from 'express';
 import {getUser,updateUser} from '../controllers/user';
 import {isAuthenticated} from '../middlewares/isAuth';
+
+
+
+
+
+
 const router = express.Router();
-
-
-
-
 //user should be authenticate
 //user should be authorize
 //get /user/userId

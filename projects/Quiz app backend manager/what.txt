@@ -94,5 +94,6 @@ how to apply authorization
 
 Error handling in typescript
 
+Express validator
 
-
+yarn add express-validator
