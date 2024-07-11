@@ -92,4 +92,7 @@ how to very and decode it
 
 how to apply authorization
 
+Error handling in typescript
+
+
 

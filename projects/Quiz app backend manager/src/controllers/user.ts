@@ -1,11 +1,12 @@
 // send/ receive data to/from database via model  
 import { Request,Response,NextFunction } from "express";
 import User from "../models/user";
+import projectError from '../helper/error';
 
 interface ReturnResponse{
     status:"success"|"error",
     message:String,
-    data:any,
+    data:{}
 }
 
 
@@ -19,7 +20,9 @@ let resp:ReturnResponse;
             //  console.log(userId,"1");
             //  console.log(req.userId,"2");
              if(req.userId !=req.params.userId){
-                const err = new Error("You are not authorized!");
+                const err = new projectError("You are not authorized!");
+                err.statusCode=401;
+                err.data = {hi:"its error"};
                 throw err;
              }
              const user =  await User.findById(userId,{name:1, email:1})
@@ -34,7 +37,7 @@ let resp:ReturnResponse;
                 
                 res.send(resp);
             }
-        } catch (error) {
+        } catch (error:any) {
 
             next(error);
         }
