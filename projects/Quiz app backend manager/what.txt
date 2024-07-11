@@ -77,6 +77,19 @@ generate signature to send data after encrypt
 how to send jwt token
 
 
-break code -> authentication &authorize
+
+.......................................................................
+break code -> divide user and auth routes 
+authentication &authorize
+middleware add in post or get() methods on routes before forwarding request to controller
 middleware...routes....middleware...controller
 middleware...... authentication:: jwt
+
+next()....middleware 
+how to send token jwt from postman or with request in authorization
+how to fetch it from authorization
+how to very and decode it
+
+how to apply authorization
+
+
