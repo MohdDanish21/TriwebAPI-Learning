@@ -6,7 +6,7 @@ import projectError from '../helper/error';
 interface ReturnResponse{
     status:"success"|"error",
     message:String,
-    data:{}
+    data:{} | []
 }
 
 
@@ -28,14 +28,14 @@ let resp:ReturnResponse;
              const user =  await User.findById(userId,{name:1, email:1})
              
              if(!user){
-                resp={status:"error",message:"no user found",data:{}};
-                
-                res.send(resp);
+                const err = new projectError("No user Exist");
+                err.statusCode = 401;
+                throw err;
              }
                else{
                 resp={status:"success",message:"User found",data:{user:user}};
                 
-                res.send(resp);
+                res.status(200).send(resp);
             }
         } catch (error:any) {
 
@@ -74,7 +74,8 @@ const updateUser = async (req: Request, res: Response, next:NextFunction) => {
     // console.log("hi");
     try {
         if(req.userId !=req.body._id){
-            const err = new Error("You are not authorized!");
+            const err = new projectError("You are not authorized!");
+            err.statusCode = 401;
             throw err;
          }
 
@@ -88,13 +89,14 @@ const updateUser = async (req: Request, res: Response, next:NextFunction) => {
 
         // Find user by _id
         const user = await User.findById(userId);
+        
 
         // Check if user exists
-        if (!user) {
-            resp = { status: "error", message: "User not found", data: {} };
-            return res.status(404).send(resp);
-            
-        }
+        if(!user){
+            const err = new projectError("No user Exist");
+            err.statusCode = 401;
+            throw err;
+         }
 
         // Update user name
         user.name = req.body.name;

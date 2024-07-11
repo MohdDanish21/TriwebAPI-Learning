@@ -4,11 +4,12 @@ import { Request,Response,NextFunction } from "express";
 import bcrypt from "bcryptjs";
 import jwt from 'jsonwebtoken';
 import User from "../models/user";
+import projectError from '../helper/error';
 
 interface ReturnResponse{
     status:"success"|"error",
     message:String,
-    data:{}
+    data:{} | []
 }
 
 
@@ -49,8 +50,9 @@ const loginUser = async (req:Request,res:Response, next:NextFunction)=>{
     //find user with email
     const user = await User.findOne({email});
     if (!user) {
-        resp = { status: "error", message: "User not found", data: {} };
-        return res.status(401).send(resp);
+        const err = new projectError("No user Exist");
+        err.statusCode = 401;
+        throw err;
         
     }
 
@@ -65,11 +67,11 @@ const loginUser = async (req:Request,res:Response, next:NextFunction)=>{
         resp = { status: "success", message: "Logged In", data: {token} };
         res.send(resp);
     }else{
-        resp = { status: "error", message: "Credentials mismatch", data: {} };
-        return res.status(401).send(resp);
+        
+        const err = new projectError("Credential mismatch");
+        err.statusCode = 401;
+        throw err;
     }
-    res.send(resp);
-    
    } catch (error) {
         next(error);
    }
