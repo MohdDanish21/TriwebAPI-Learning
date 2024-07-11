@@ -97,3 +97,6 @@ Error handling in typescript
 Express validator
 
 yarn add express-validator
+
+How to verify password and confirm password
+how to check, like username or dob or city name is not included in password
