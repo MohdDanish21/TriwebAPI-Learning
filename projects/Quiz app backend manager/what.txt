@@ -100,3 +100,12 @@ yarn add express-validator
 
 How to verify password and confirm password
 how to check, like username or dob or city name is not included in password
+
+controller - function body
+model create for quiz 
+authentication-postman-to easy-environment setup
+
+implementation of quiz model
+projection -> how to filter what to show and what to hide
+
+
