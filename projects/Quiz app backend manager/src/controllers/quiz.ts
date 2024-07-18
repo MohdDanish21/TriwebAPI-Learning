@@ -1,5 +1,7 @@
 
 import { Request,Response,NextFunction } from "express"
+import { validationResult } from "express-validator";
+
 import Quiz from '../models/quiz';
 import ProjectError from "../helper/error";
 import { isNamedExportBindings } from "typescript";
@@ -13,6 +15,14 @@ interface ReturnResponse{
 const createQuiz = async(req:Request,res:Response,next:NextFunction)=>{
 
    try {
+    const validationError = validationResult(req);
+    if(!validationError.isEmpty()){
+        const err = new ProjectError("validation failed");
+        err.statusCode = 422;
+        err.data = validationError.array();
+        throw err;
+    }
+
     const created_by = req.userId;
     const name = req.body.name;
     const questions_list = req.body.questions_list;
@@ -54,6 +64,13 @@ const getQuiz = async(req:Request,res:Response,next:NextFunction)=>{
 
 const updateQuiz =async (req:Request,res:Response,next:NextFunction)=>{
    try {
+    const validationError = validationResult(req);
+    if(!validationError.isEmpty()){
+        const err = new ProjectError("validation failed");
+        err.statusCode = 422;
+        err.data = validationError.array();
+        throw err;
+    }
          const quizId = req.body._id;
          const quiz =await Quiz.findById(quizId);
          
@@ -66,6 +83,12 @@ const updateQuiz =async (req:Request,res:Response,next:NextFunction)=>{
    if(req.userId !== quiz.created_by.toString()){
     const err = new ProjectError("you are not authorized");
     err.statusCode =403;
+    throw err;
+}
+
+if(quiz.is_published){
+    const err = new ProjectError("You can not update, published Quiz!");
+    err.statusCode=405;
     throw err;
 }
 
@@ -98,6 +121,11 @@ const deleteQuiz = async(req:Request,res:Response,next:NextFunction)=>{
         if(req.userId !== quiz.created_by.toString()){
             const err = new ProjectError("you are not authorized");
             err.statusCode =403;
+            throw err;
+        }
+        if(quiz.is_published){
+            const err = new ProjectError("You can not delete, published Quiz!");
+            err.statusCode=405;
             throw err;
         }
         
