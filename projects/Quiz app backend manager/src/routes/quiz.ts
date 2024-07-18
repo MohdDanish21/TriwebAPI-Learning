@@ -22,7 +22,7 @@ router.delete('/:quizId',isAuthenticated,deleteQuiz);
 
 //publish
 //patch quiz/publish
-router.patch("/publish",publishQuiz);
+router.patch("/publish",isAuthenticated,publishQuiz);
 
 
 export default router;
