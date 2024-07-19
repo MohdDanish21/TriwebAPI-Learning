@@ -2,12 +2,8 @@
 import { Request,Response,NextFunction } from "express";
 import User from "../models/user";
 import projectError from '../helper/error';
+import { ReturnResponse } from "../utils/interface";
 
-interface ReturnResponse{
-    status:"success"|"error",
-    message:String,
-    data:{} | []
-}
 
 
 

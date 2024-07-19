@@ -11,14 +11,11 @@ import quizRoute from './routes/quiz';
 import ProjectError from './helper/error';
 import examRoute from './routes/exam';
 import reportRoute from './routes/report';
+import { ReturnResponse } from "./utils/interface";
 
 const app =express();
 
-interface ReturnResponse{
-    status:"success"|"error",
-    message:String,
-    data:{} | []
-}
+
 
 const connectionString = process.env.CONNECTION_STRING || "";
 

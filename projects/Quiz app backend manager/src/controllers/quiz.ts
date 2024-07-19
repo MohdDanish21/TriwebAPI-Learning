@@ -5,12 +5,8 @@ import { validationResult } from "express-validator";
 import Quiz from '../models/quiz';
 import ProjectError from "../helper/error";
 import { isNamedExportBindings } from "typescript";
+import { ReturnResponse } from "../utils/interface";
 
-interface ReturnResponse{
-    status:"success"|"error",
-    message:String,
-    data:{} | []
-}
 
 const createQuiz = async(req:Request,res:Response,next:NextFunction)=>{
 
