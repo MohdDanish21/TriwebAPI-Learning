@@ -116,3 +116,4 @@ validation for quiz routes
 
 ...fetch result/report
 optional parameter
+req:Request,res:Response,next:NextFunction how to handle it

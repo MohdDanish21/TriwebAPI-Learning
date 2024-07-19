@@ -1,6 +1,7 @@
 
 // send/ receive data to/from database via model  
-import { Request,Response,NextFunction } from "express";
+// import { Request,Response,NextFunction,} from "express";
+import {RequestHandler } from "express";
 import bcrypt from "bcryptjs";
 import jwt from 'jsonwebtoken';
 import { validationResult } from "express-validator";
@@ -15,7 +16,9 @@ interface ReturnResponse{
 }
 
 
-const registerUser = async(req:Request,res:Response,next:NextFunction)=>{
+//in this file we r using RequestHandler in other files we using Request,Response, NextFunction
+//const registerUser = async(req:Request,res:Response,next:NextFunction)=>{}
+const registerUser:RequestHandler = async(req,res,next)=>{
 
     let resp:ReturnResponse;
     try {
@@ -52,7 +55,7 @@ const registerUser = async(req:Request,res:Response,next:NextFunction)=>{
      
 }
 
-const loginUser = async (req:Request,res:Response, next:NextFunction)=>{
+const loginUser:RequestHandler = async (req,res,next)=>{
     let resp:ReturnResponse;
    try {
     const email= req.body.email;
