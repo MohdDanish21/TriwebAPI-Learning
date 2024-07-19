@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import Quiz from "../models/quiz";
-import Result from "../models/result";
+import Report from "../models/report";
 import ProjectError from "../helper/error";
 
 
@@ -57,8 +57,8 @@ const submitExam = async (req: Request, res: Response,next:NextFunction) => {
       }
     }
 
-    const result =  new Result({userId,quizId,Score,total});
-    const data = await result.save();
+    const report =  new Report({userId,quizId,Score,total});
+    const data = await report.save();
     const resp:ReturnResponse = {status:"success", message:"Quiz Submitted ",data:{total,Score,resultId:data._id}};
     res.status(200).send(resp);
     

@@ -10,6 +10,7 @@ import authRoute from './routes/auth';
 import quizRoute from './routes/quiz';
 import ProjectError from './helper/error';
 import examRoute from './routes/exam';
+import reportRoute from './routes/report';
 
 const app =express();
 
@@ -51,6 +52,9 @@ app.use('/quiz',quizRoute);
 
 //Redirect /exam
 app.use('/exam',examRoute);
+
+//Redirect /exam
+app.use('/report',reportRoute);
 
 app.use((err:ProjectError, req:Request,res:Response,next:NextFunction)=>{
     
