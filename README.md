@@ -57,3 +57,5 @@
 22.[.MYPROJECT](./React/my/README.md)
 
 23.[.TicTacToe](./Projects%20of%20Tic-Tac-Toe/tic-tac-toe/README.md)
+
+24.[.QuizAppBackendManager](./projects/Quiz%20app%20backend%20manager/README.md)
